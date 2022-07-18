@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Shiva Thakur</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      html {
+        position: relative;
+      }
+      .container {
+        width: 500px;
+        border: 5px solid red;
+        position: absolute;
+        padding: 20px;
+        left: 30%;
+        top: 220px;
+        background-color: black;
+        border-radius: 20px;
+      }
+      .container .center {
+        text-align: center;
+        font-size: 25px;
+        font-family: monospace;
+        padding: 10px;
+        color: white;
+      }
+      .container .proData {
+        border: 2px solid green;
+        padding: 20px;
+      }
+      .container .proData input {
+        width: 60%;
+        padding: 6px;
+        border-radius: 10px;
+        margin-left: 20%;
+        outline: none;
+      }
+      .container .proData .demo {
+        text-align: center;
+        padding: 10px;
+        font-family: cursive;
+        color: white;
+      }
+      .container .proData .click {
+        width: 200px;
+        padding: 8px;
+        background-color: rgb(248, 1, 1);
+        color: white;
+        font-family: monospace;
+        text-align: center;
+        border: none;
+        border-radius: 20px;
+        margin-left: 25%;
+        margin-top: 10px;
+        cursor: pointer;
+        font-weight: 900;
+      }
+      .container .proData .click:hover {
+        background-color: rgba(248, 0, 0, 0.795);
+      }
+
+      h2 {
+        color: white;
+        font-size: small;
+        text-align: center;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="center">Javascript Engin Chack Leap Years</h1>
+      <div class="proData">
+        <input
+          type="text"
+          placeholder="Enter Your Years"
+          autofocus="autofocus"
+        />
+        <p class="demo"></p>
+        <button class="click">Chack</button>
+        <h2>&copy; Allright Reserved Developer By Shiva Thakur</h2>
+      </div>
+    </div>
+    <!-- container end here -->
+    <script>
+      const btn = document.querySelector(".click");
+      const input = document.querySelector("input");
+      const demo = document.querySelector("p");
+
+      const coder = () => {
+        if (isNaN(input.value)) {
+          alert("Enter  Your Number");
+          window.location.reload();
+        } else {
+          alert("Data Isert Succes");
+          if (input.value % 4 === 0) {
+            if (input.value % 100 === 0) {
+              if (input.value % 400 === 0) {
+                demo.innerHTML = `This is  ${input.value} a Leap year`;
+              } else {
+                demo.innerHTML = `This is ${input.value} Not Leap year`;
+              }
+            } else {
+              demo.innerHTML = `This is  ${input.value} a Leap year`;
+            }
+          } else {
+            demo.innerHTML = `This is ${input.value} Not Leap year`;
+          }
+        }
+      };
+
+      btn.addEventListener("click", coder, true);
+    </script>
+  </body>
+</html>
